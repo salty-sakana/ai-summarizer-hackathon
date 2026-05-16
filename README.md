@@ -2,7 +2,7 @@
 
 > 人机协同程序设计 · 期末大作业
 
-📍 **在线体验链接**：`https://你的应用名.onrender.com`（部署后替换）
+📍 **在线体验链接**：https://hiyooo-ai-summarizer.hf.space
 
 一款基于 FastAPI + Qwen-2.5 大模型的轻量级文本总结工具。粘贴长文本，AI 自动按 **核心结论 → 关键要点 → 行动启发** 三段式结构化输出，支持 Markdown 渲染。
 
@@ -58,14 +58,14 @@ uvicorn main:app --reload
 
 访问 `http://localhost:8000/static/index.html` 即可使用。
 
-## 部署到 Render
+## 部署到 Hugging Face Spaces
 
 1. 将代码推送至 GitHub
-2. 登录 [Render.com](https://render.com) → New Web Service → 连接你的 GitHub 仓库
-3. Build Command：`pip install -r requirements.txt`
-4. Start Command：`uvicorn main:app --host 0.0.0.0 --port $PORT`
-5. 添加环境变量 `LLM_API_KEY`
-6. 部署完成，获取 `*.onrender.com` 链接
+2. 登录 [Hugging Face](https://huggingface.co) → New Space
+3. SDK 选择 **Docker**，硬件选 **Free**
+4. 通过 GitHub 导入仓库或手动上传 `Dockerfile`、`main.py`、`requirements.txt`
+5. Settings → Repository Secrets → 添加 `LLM_API_KEY`
+6. 部署完成，获取 `*.hf.space` 链接
 
 ## 项目结构
 
