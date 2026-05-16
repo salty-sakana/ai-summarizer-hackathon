@@ -56,6 +56,14 @@ input.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.ctrlKey)run()});
 def root():
     return HTMLResponse(INDEX_HTML)
 
+@app.get("/6107125110.txt")
+def domain_verify():
+    try:
+        with open("6107125110.txt", "r", encoding="utf-8") as f:
+            return f.read()
+    except FileNotFoundError:
+        raise HTTPException(404, "验证文件未找到")
+
 @app.post("/api/summarize")
 async def summarize(req: dict):
     api_key = os.getenv("LLM_API_KEY")
